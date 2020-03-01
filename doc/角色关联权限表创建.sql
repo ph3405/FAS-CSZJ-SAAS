@@ -1,0 +1,19 @@
+
+
+CREATE TABLE [dbo].[TKS_FAS_Role2Permission](
+	[Id] [varchar](50) NOT NULL,	
+	[RoleId] [varchar](36) NULL,
+	[Permission] [varchar](36) NULL,
+	[PLevel] int NULL,
+ CONSTRAINT [PK_TKS_FAS_Role2Permission] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

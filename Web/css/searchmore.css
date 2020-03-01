@@ -1,0 +1,45 @@
+﻿  .layui-search-mored {
+            height: auto;
+            top: 63px;
+            background-color: #fff;
+            z-index: 5;
+            box-shadow: -4px 4px 7px -3px #ccc;
+            position: absolute;
+            margin-bottom: 10px;
+            display: none;
+            right: 0;
+            width: 470px;
+        }
+
+            .layui-search-mored .layui-search-body {
+                padding: 10px;
+                padding-bottom: 45px;
+            }
+
+                .layui-search-mored .layui-search-body .layui-btn-more {
+                    padding: 10px;
+                    padding-bottom: 45px;
+                }
+
+            .layui-search-mored .layui-search-footer {
+                height: 60px;
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                width: 100%;
+                border-top: 1px solid #e2e2e2;
+                text-align: right;
+            }
+
+                .layui-search-mored .layui-search-footer .layui-btn-more {
+                    margin: 10px 5px;
+                    padding: 0 15px;
+                }
+
+                    .layui-search-mored .layui-search-footer .layui-btn-more:last-child {
+                        margin-right: 15px;
+                    }
+
+        .layui-table-body {
+            position: relative;
+        }

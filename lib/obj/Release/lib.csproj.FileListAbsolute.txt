@@ -1,0 +1,6 @@
+D:\wwwroot\FAS-CSZJ-SAAS\lib\bin\Release\lib.dll
+D:\wwwroot\FAS-CSZJ-SAAS\lib\bin\Release\lib.pdb
+D:\wwwroot\FAS-CSZJ-SAAS\lib\obj\Release\lib.csprojAssemblyReference.cache
+D:\wwwroot\FAS-CSZJ-SAAS\lib\obj\Release\lib.csproj.CoreCompileInputs.cache
+D:\wwwroot\FAS-CSZJ-SAAS\lib\obj\Release\lib.dll
+D:\wwwroot\FAS-CSZJ-SAAS\lib\obj\Release\lib.pdb

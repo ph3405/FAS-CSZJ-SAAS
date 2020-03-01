@@ -1,0 +1,170 @@
+﻿.layui-table tbody tr {
+    /*height:100px;*/
+}
+
+    .layui-table tbody tr:hover, .layui-table tfoot tr:hover {
+        background-color: #ffffff;
+    }
+
+.layui-table td {
+    padding: 0px 0px;
+    border: 1px solid Silver;
+}
+
+.layui-table th {
+    border: 1px solid Silver;
+}
+
+
+
+.layui-table textarea {
+    resize: none;
+}
+
+.layui-table input::-ms-clear {
+    display: none;
+}
+
+.layui-table textarea:focus, .layui-table input:focus {
+    border: 1px solid #24b073;
+}
+
+.DisplayMoney-total input:focus {
+    border: none;
+}
+
+.ui-autocomplete {
+    text-align: left;
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.zyInput {
+    max-width: 217px;
+    max-height: 60px;
+    min-height: 60px;
+    min-width: 217px;
+    height: 60px;
+    width: 217px;
+    border: none;
+    overflow: auto;
+}
+
+.kmContainer {
+    position: relative;
+}
+
+.kmInput {
+    max-width: 337px;
+    max-height: 60px;
+    min-height: 60px;
+    min-width: 337px;
+    height: 60px;
+    width: 337px;
+    border: none;
+    overflow: auto;
+}
+
+.DisplayTextKemu {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 337px;
+    height: 60px;
+    background-color: white;
+    padding: 3px;
+}
+
+.DisplayMoneyVal-d, .DisplayMoneyVal-c{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 219px;
+    height: 60px;
+    background: none;
+    padding-top: 25px;
+}
+.DisplayMoneyVal-d span ,.DisplayMoneyVal-c span,.CreditMoney-total span,.DebitMoney-total span{
+    position: absolute;
+    right: -5px;
+}
+.DisplayJieFang,.DisplayDaiFang,.CreditMoney-total-daifang,.DebitMoney-total-jiefang{
+    font-family: 'tahoma';
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 11px;
+    overflow: hidden;
+    text-align: right;
+}
+
+.DebitMoney, .CreditMoney, .DebitMoney-total, .CreditMoney-total {
+    padding-left: 5px;
+    width: 212px;
+    height: 60px;
+    border: none;
+    /*text-align: right;*/
+    font-family: tahoma;
+    font-weight: bold;
+    font-size: 20px;
+    /*letter-spacing: 11px;*/
+    background: none;
+    
+}
+.selectInput {
+    background-color: white;
+    text-align: left;
+
+}
+.DisplayMoney, .DisplayMoney-total {
+    position: relative;
+    background: url(../img/MoneyUint.png);
+}
+
+.rowAdd, .rowRemove,.rowAddSub {
+    position: absolute;
+    font-weight: bolder;
+    display: none;
+}
+
+.layui-table td {
+    line-height: 12px;
+    padding: 0px;
+}
+
+.layui-table th {
+    color: gray;
+    line-height: 30px;
+    padding: 0px;
+}
+
+.layui-table thead tr {
+    background-color: #fff;
+}
+
+.layui-table tr:hover, .layui-table[lay-even] tr:nth-child(even) {
+    background-color: #fff;
+}
+
+.moneyUint {
+    border-top: 1px solid #dadada;
+    height: 30px;
+    background-image: url(../img/MoneyUint.png);
+    width: 219px;
+}
+
+    .moneyUint span {
+        float: left;
+        display: inline;
+        width: 19px;
+        height: 100%;
+        margin-right: 1px;
+        background-color: #fff;
+        text-align: center;
+        font-size: 12px;
+    }
+
+
+    .moneyUint .last {
+        margin-right: 0;
+    }

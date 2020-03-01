@@ -1,0 +1,15 @@
+C:\FAS1.0\lib\bin\Debug\lib.dll
+C:\FAS1.0\lib\bin\Debug\lib.pdb
+C:\FAS1.0\lib\obj\Debug\lib.csprojAssemblyReference.cache
+C:\FAS1.0\lib\obj\Debug\lib.csproj.CoreCompileInputs.cache
+C:\FAS1.0\lib\obj\Debug\lib.dll
+C:\FAS1.0\lib\obj\Debug\lib.pdb
+D:\wwwroot\FAS-CSZJ-SAAS\lib\bin\Debug\lib.dll
+D:\wwwroot\FAS-CSZJ-SAAS\lib\bin\Debug\lib.pdb
+D:\wwwroot\FAS-CSZJ-SAAS\lib\obj\Debug\lib.dll
+D:\wwwroot\FAS-CSZJ-SAAS\lib\obj\Debug\lib.pdb
+D:\FAS-CSZJ-SAAS\lib\bin\Debug\lib.dll
+D:\FAS-CSZJ-SAAS\lib\bin\Debug\lib.pdb
+D:\FAS-CSZJ-SAAS\lib\obj\Debug\lib.csproj.CoreCompileInputs.cache
+D:\FAS-CSZJ-SAAS\lib\obj\Debug\lib.dll
+D:\FAS-CSZJ-SAAS\lib\obj\Debug\lib.pdb

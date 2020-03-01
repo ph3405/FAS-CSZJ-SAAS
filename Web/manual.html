@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>操作手册</title>
+    <link rel="shortcut icon" href="img/zxs-shorticon.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <!--<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>-->
+    <style>
+        .top-bar {
+            background: #00a1e9;
+            height: 60px;
+        }
+
+        .zxs-logo {
+            height: 50px;
+            position: absolute;
+            left: 30px;
+            top: 10px;
+            z-index: 22;
+        }
+
+            .zxs-logo img {
+                height: 100%;
+                display: block;
+            }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 30px;
+            top: 15px;
+            z-index: 22;
+        }
+
+        .nav-item {
+            display: block;
+            color: #fff;
+            font-size: 14px;
+            margin-left: 30px;
+        }
+
+            .nav-item.active {
+                padding: 6px 16px;
+                background: #26afec;
+                border-radius: 50px;
+            }
+
+        body {
+            background: #f9f9f9;
+        }
+
+        .content-box {
+            width: 1200px;
+            margin: 30px auto 0;
+        }
+
+        .leftmenu {
+            width: 200px;
+            float: left;
+        }
+
+        .menutit {
+            background: url(img/titpg.png) no-repeat center;
+            background-size: 100%;
+            width: 200px;
+            height: 83px;
+            padding-top: 15px;
+            box-sizing: border-box;
+        }
+
+            .menutit p {
+                color: #fff;
+                font-size: 20px;
+                font-family: "微软雅黑";
+                font-weight: normal;
+                margin-left: 15px;
+            }
+
+                .menutit p.little {
+                    font-size: 12px;
+                    line-height: 30px;
+                }
+
+        .menulist {
+            border: 1px solid #e8e8e8;
+            margin-top: 20px;
+        }
+
+        .menuitem {
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            padding-left: 15px;
+            box-sizing: border-box;
+        }
+
+        .menulist .menuitem:nth-of-type(odd) {
+            background: #fff;
+        }
+
+        .menulist .menuitem:nth-of-type(even) {
+            background: #fafafa;
+        }
+
+        .menulist .menuitem.active {
+            background: #007AFF;
+            color: #fff;
+            position: relative;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 15px;
+            width: 5px;
+            display: block;
+        }
+
+            .arrow img {
+                width: 100%;
+            }
+
+        .rightdetail {
+            width: 980px;
+            float: right;
+        }
+
+        .detailtit {
+            height: 83px;
+            line-height: 81px;
+            border: 1px solid #E8E8E8;
+            box-sizing: border-box;
+            color: #007AFF;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .detailcot {
+            border: 1px solid #E8E8E8;
+            border-top: 0;
+        }
+    </style>
+</head>
+	
+<body>
+    <div class="top-bar">
+        <div class="zxs-logo"><img src="img/zxsLogo.png" /></div>
+
+        <div class="nav-menu">
+            <a class="nav-item" href="http://www.zhangxiaosuan.com/index.html">首页</a>
+            <a class="nav-item active"  href="http://fas.zhangxiaosuan.com/manual.html" >手册</a>
+            <a class="nav-item" href="http://www.zhangxiaosuan.com/aboutUs.html">我们</a>
+            <a class="nav-item" href="http://fas.zhangxiaosuan.com/login.aspx" >登录</a>
+            <a class="nav-item" href="http://fas.zhangxiaosuan.com/register1.aspx">注册</a>
+        </div>
+    </div>
+    <div class="content-box clear">
+        <div class="leftmenu">
+            <div class="menutit">
+                <p>操作手册</p>
+                <p class="little">Manual</p>
+            </div>
+            <div class="menulist">
+                <!--<div class="menuitem">
+                    <span>
+                        <img src="img/grayyuan.png" />
+                    </span>
+                    <span>注册用户</span>
+                </div>
+                <div class="menuitem">
+                    <span>
+                        <img src="img/grayyuan.png" />
+                    </span>
+                    <span>建立账套</span>
+                </div>
+                <div class="menuitem active">
+                    <span>
+                        <img src="img/whiteyuan.png" />
+                    </span>
+                    <span>建立账套</span>
+                    <span class="arrow">
+                        <img src="img/arrow.png" />
+                    </span>
+                </div>-->
+            </div>
+        </div>
+        <div class="rightdetail">
+            <!--<div class="detailtit">
+                注册用户
+            </div>
+            <div class="detailcot">123</div>-->
+        </div>
+    </div>
+    <script id="tpl-left" type="text/x-jsrender">
+
+        {{if Active==1}}
+        <div class="menuitem active" data-title="{{:Title}}"  data-content='{{:Content}}'>
+            <span>
+                <img src="img/grayyuan.png" />
+            </span>
+            <span>{{:Title}}</span>
+            <span class="arrow">
+                <img src="img/arrow.png" />
+            </span>
+        </div>
+        {{else}}
+        <div class="menuitem"  data-title="{{:Title}}"  data-content='{{:Content}}'>
+            <span>
+                <img src="img/grayyuan.png" />
+            </span>
+            <span>{{:Title}}</span>
+            <span class="arrow">
+
+            </span>
+        </div>
+        {{/if}}
+
+    </script>
+    <script id="tpl-right" type="text/x-jsrender">
+
+        <div class="detailtit">
+            {{:Title}}
+        </div>
+        <div class="detailcot">{{:Content}}</div>
+
+    </script>
+    <script type="text/javascript" src="layui/layui.js"></script>
+    <script type="text/javascript">
+        var $, tab, form, layer, element;
+        layui.config({
+            base: "/layui/lay/modules/"
+        }).use(['form', 'element', 'layer', 'jquery', 'jqExt'], function () {
+            form = layui.form(),
+                layer = layui.layer,
+                element = layui.element();
+            $ = layui.jquery;
+
+            var init = function () {
+                var request = {};
+                request.Type = "book";
+                //var index = $.loading('初始化');
+                $.Post('/fas/set/BookSearch', request, function (data) {
+                    var res = data;
+                    //layer.close(index);
+                    if (!res.IsSuccess) {
+                        $.warning(res.Message);
+                    }
+                    else {
+                        var info = [];
+                        if (res.Data.length > 0) {
+                            for (var i = 0; i < res.Data.length; i++) {
+                                var obj = {
+                                    Id: res.Data[i].id,
+                                    Title: res.Data[i].title,
+                                    Content: res.Data[i].content,
+                                    Active: 1
+                                };
+                                if (i > 0) {
+                                    obj = {
+                                        Id: res.Data[i].id,
+                                        Title: res.Data[i].title,
+                                        Content: res.Data[i].content,
+                                        Active: 0
+                                    };
+                                }
+                                info.push(obj);
+                            }
+                            var template = $.templates("#tpl-left");
+                            var dataHtml = template.render(info);
+                            $('.menulist').html(dataHtml);
+
+                            var template_right = $.templates("#tpl-right");
+                            var dataHtml_right = template_right.render(info[0]);
+                            $('.rightdetail').html(dataHtml_right);
+                           
+                            $(".menuitem").on("click", function () {
+                                var title = $(this).attr('data-title');
+                                var content = $(this).attr('data-content');
+                                $(".menuitem").removeClass("active");
+                                $(this).attr("class", "menuitem active");
+                                $(this).find(".arrow").html('<img src="img/arrow.png" />');
+                                $(".detailtit").html(title);
+                                $(".detailcot").html(content);
+                            })
+                            form.render();
+                        }
+                        //alert(res.Data);
+
+                        // 添加新窗口
+                        //$(".layui-nav .layui-nav-item a").on("click", function () {
+                        //    addTab($(this));
+                        //    $(this).parent("li").siblings().removeClass("layui-nav-itemed");
+                        //})
+                        //if (res.FuncId == "112323") {
+                        //    opAccountListGet();
+                        //}
+
+                    }
+
+
+                }, function (err) {
+                    $.warning(err.Message);
+                    //layer.close(index);
+
+                });
+            }
+            init();
+
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <!--startprint-->
+   
+    <!--endprint-->
+    <script type="text/javascript" src="../../../../layui/layui.js"></script>
+    <script type="text/javascript">
+        layui.config({
+            base: "/layui/lay/modules/"
+        }).use(['form', 'layer', 'jquery', 'laypage', 'jqExt', 'JsRender'], function () {
+            var form = layui.form(),
+                layer = layui.layer,
+                laypage = layui.laypage,
+                $ = layui.jquery;
+            var request;
+            var saveData; //保存查询的数据
+            $(document).ready(function () {
+
+                var Type = $.getQueryString('Type');
+                var PZZ = $.getQueryString('PZZ');
+                var PZZ_S = $.getQueryString('PZZ_S');
+                var PZZ_E = $.getQueryString('PZZ_E');
+                var Period = $.getQueryString('Period');
+                var Token = $.getQueryString('Token');
+                var PageIndex = $.getQueryString('PageIndex');
+                var PageSize = $.getQueryString('PageSize');
+                var Period_S = $.getQueryString('Period_S');
+                var Period_E = $.getQueryString('Period_E');
+                var MorePZZ = $.getQueryString('MorePZZ');
+                var MorePZZ_S = $.getQueryString('MorePZZ_S');
+                var MorePZZ_E = $.getQueryString('MorePZZ_E');
+                request = {};
+                request.Type = Type;
+                request.PZZ = PZZ;
+                request.PZZ_S = PZZ_S;
+                request.PZZ_E = PZZ_E;
+                request.Period = Period;
+                request.Token = Token;
+                request.PageIndex = PageIndex;
+                request.PageSize = PageSize;
+                if (Type == "more") {
+                    request.More = {};
+                    request.More.Period_S = Period_S;
+                    request.More.Period_E = Period_E;
+                    request.More.PZZ = MorePZZ;
+                    request.More.PZZ_S = MorePZZ_S;
+                    request.More.PZZ_E = MorePZZ_E;
+                }
+                
+
+                $.Post("/fas/doc/DocListSearch", request,
+                    function (data) {
+                        var res = data;
+                        if (res.IsSuccess) {
+                            saveData = data;
+                            Print(saveData);
+                        } else {
+
+                        }
+                    }, function (err) {
+
+                    });
+                
+            });
+            function Print(saveData) {
+                if (saveData != undefined && saveData.Data.length > 0) {
+                    var html = "";
+                    var htmlStyle =
+                        "#tb td {" +
+                        "border-right: 1px solid #808080;" +
+                        "border-bottom: 1px solid #808080;" +
+                        "padding: 2px;" +
+                        "letter-spacing: 1px;" +
+                        "}" +
+
+                        "#tb tr {" +
+                        "height: 60px;" +
+                        "}" +
+
+                        "#tb thead {" +
+                        " font-size: 14px;" +
+                        "}" +
+
+                        "#tb tbody, #tb tfoot {" +
+                        "font-size: 12px; " +
+                        "}" +
+                        ".A4 {   " +       
+                       " page -break-before: auto; " +
+                       "page -break-after: always; " +
+                      "} ";
+                    var count = 0;
+                    for (var i = 0; i < saveData.Data.length; i++) {
+                        var AMT_DBT = digitUppercase(saveData.Data[i].Head["AMT_DBT"]);
+                        var htmlHead = "<div class='A4'><table style='width:660px;'>" +
+                            "<tr>" +
+                            "<td style='width:33.3333%'></td>" +
+                            "<td style='font-size:20px;text-align:center;font-weight:400'> " + saveData.Data[i].Head["PZZName"] + "账凭证</td>" +
+                            "<td style='font-size:12px;width:33.3333%;text-align:right'>附单据数：  " + saveData.Data[i].Head["AttachmentCount"] + "</td>" +
+                            "</tr>" +
+                            "<tr>" +
+                            "<td style='font-size:12px;width:33.3333%'>核算单位： " + saveData.AccountName + "</td>" +
+                            "<td style='font-size:12px;text-align:center;'>日期：  " + saveData.Data[i].Head["PZDate"].split('T')[0] + "</td>" +
+                            "<td style='font-size:12px;width:33.3333%;text-align:right'>凭证号：  " + saveData.Data[i].Head["PZZName"] + " - " + saveData.Data[i].Head["PZZNO"] + "</td>" +
+                            "</tr>" +
+                            "</table >" +
+                            "<table id='tb' style='border: 1px solid #000000;width:665px;' cellspacing='0' cellpadding='0'>" +
+                            "<thead>" +
+                            "<tr>" +
+                            "<td style='text-align:center;width:160px'>摘要</td>" +
+                            "<td style='text-align :center;width:240px'>科目</td>" +
+                            "<td style='text-align:center;width:120px;'>借方金额</td>" +
+                            "<td style='text-align:center;width:120px;border-right:none'>贷方金额</td>" +
+                            "</tr>" +
+                            "</thead>" +
+                            "<tbody>";
+                        var htmlDetail = "";
+                        for (var j = 0; j < saveData.Data[i].Detail.length; j++) {
+                            htmlDetail += "<tr>" +
+                                "<td style='text-align:left'>" + saveData.Data[i].Detail[j].Summary + "</td > " +
+                                "<td style='text-align :left'>" + saveData.Data[i].Detail[j].SubjectDescription + "</td>" +
+                                "<td style='text-align:right;padding-right:10px;'>" + saveData.Data[i].Detail[j].Money_Debit + " </td>" +
+                                "<td style='text-align:right;padding-right:10px;border-right:none'>" + saveData.Data[i].Detail[j].Money_Credit + "</td>" +
+                                "</tr>";
+                        }
+
+                        var htmlSum = "</tbody>" +
+                            "<tfoot>" +
+                            "<tr>" +
+                            "<td style='text-align:left;border-bottom:none' colspan='2'>合计: " + AMT_DBT + "</td>" +
+
+                            "<td style='text-align:right;padding-right:10px;border-bottom:none'> " + saveData.Data[i].Head["AMT_DBT"] + " </td>" +
+                            "<td style='text-align:right;padding-right:10px;border:none'> " + saveData.Data[i].Head["AMT_DBT"] + " </td>" +
+                            "</tr>" +
+                            "</tfoot>" +
+
+                            "</table>";
+
+                        var htmlFoot = "<table style='width:660px;font-size:12px;height:40px;'>" +
+                            "<tr>" +
+                            "<td style='width:20%'>主管：</td>" +
+                            "<td style='width:20%'>记账：</td>" +
+                            "<td style='width:20%'>审核：</td>" +
+                            "<td style='width:20%'>出纳：</td>" +
+                            "<td style='width:20%'>制单： " + saveData.Data[i].Head.CreateUser + "</td>" +
+                            "</tr>" +
+                            "</table></div>" +
+                            "<div style='height:1px'></div>";
+                        count++;
+                        var pageHtml = "<p style='page-break-after: always;'></p>";
+                        html += htmlHead + htmlDetail + htmlSum + htmlFoot;
+                        if (count == 2) {
+                            //html += pageHtml;
+                            count = 0;
+                        }
+                    }
+
+                    var str = '<!DOCTYPE html>';
+                    str += '<html>';
+                    str += '<head>';
+                    str += '<meta charset="utf-8">';
+                    str += '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">';
+                    str += '<style>';
+                    str += htmlStyle;
+                    str += '</style>';
+                    str += '</head>';
+                    str += '<body>';
+                    str += html;
+                    str += '</body>';
+                    str += '</html>';
+                    window.document.body.innerHTML = str;
+                    window.print();
+                    //window.close();
+
+                }
+            }
+
+            var digitUppercase = function (n) {
+                var fraction = ['角', '分'];
+                var digit = [
+                    '零', '壹', '贰', '叁', '肆',
+                    '伍', '陆', '柒', '捌', '玖'
+                ];
+                var unit = [
+                    ['元', '万', '亿'],
+                    ['', '拾', '佰', '仟']
+                ];
+                var head = n < 0 ? '欠' : '';
+                n = Math.abs(n);
+                var s = '';
+                for (var i = 0; i < fraction.length; i++) {
+                    s += (digit[Math.floor(n * 10 * Math.pow(10, i)) % 10] + fraction[i]).replace(/零./, '');
+                }
+                s = s || '整';
+                n = Math.floor(n);
+                for (var i = 0; i < unit[0].length && n > 0; i++) {
+                    var p = '';
+                    for (var j = 0; j < unit[1].length && n > 0; j++) {
+                        p = digit[n % 10] + unit[1][j] + p;
+                        n = Math.floor(n / 10);
+                    }
+                    s = p.replace(/(零.)*零$/, '').replace(/^$/, '零') + unit[0][i] + s;
+                }
+                return head + s.replace(/(零.)*零元/, '元')
+                    .replace(/(零.)+/g, '零')
+                    .replace(/^整$/, '零元整');
+            };
+        })
+
+    </script>
+</body>
+
+</html>

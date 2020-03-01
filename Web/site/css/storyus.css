@@ -1,0 +1,137 @@
+﻿/*以下故事界面代码*/
+.story-banner {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.story-one {
+	width: 1200px;
+	margin: 0 auto;
+}
+.story-img {
+	width: 680px;
+	height: 380px;
+	float: left;
+	margin-top: 30px;
+}
+.story-txt {
+	width: 420px;
+	height: 320px;
+	float: left;
+	font-size: 14px;
+	color: #333;
+	padding: 100px 40px 0 40px;
+	line-height: 40px;
+}
+.story-img2 {
+	width: 721px;
+	height: 403px;
+	float: left;
+	margin-top: 30px;
+}
+.story-txt2 {
+	width: 380px;
+	height: 320px;
+	float: left;
+	font-size: 14px;
+	color: #333;
+	padding: 140px 0px 0 50px;
+	line-height: 40px;
+}
+.story-img3 {
+	width: 680px;
+	height: 251px;
+	float: left;
+	margin-top: 30px;
+}
+.story-txt3 {
+	width: 420px;
+	height: 150px;
+	float: left;
+	font-size: 14px;
+	color: #333;
+	padding: 100px 40px 0 40px;
+	line-height: 40px;
+}
+.story-banner2 {
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-top: 60px;
+}
+.story-img4 {
+	width: 660px;
+	height: 250px;
+	float: left;
+	margin-top: 30px;
+}
+.story-txt4 {
+	width: 420px;
+	height: 140px;
+	float: left;
+	font-size: 14px;
+	color: #333;
+	padding: 120px 0px 0 50px;
+	line-height: 40px;
+}
+.story-img5 {
+	width: 512px;
+	height: 365px;
+	float: left;
+	margin-top: 30px;
+}
+.story-txt5 {
+	width: 540px;
+	height: 250px;
+	float: left;
+	font-size: 14px;
+	color: #333;
+	padding: 140px 40px 0 20px;
+	line-height: 40px;
+}
+.story-img6 {
+	width: 717px;
+	height: 311px;
+	float: left;
+	margin-top: 30px;
+}
+.story-txt6 {
+	width: 350px;
+	height: 140px;
+	float: left;
+	font-size: 14px;
+	color: #333;
+	padding: 80px 0px 0 50px;
+	line-height: 40px;
+}
+.story-img7 {
+	width: 586px;
+	height: 250px;
+	float: left;
+	margin-top: 30px;
+	margin-bottom: 100px;
+}
+.story-txt7 {
+	width: 480px;
+	height: 300px;
+	float: left;
+	font-size: 14px;
+	color: #333;
+	padding: 120px 50px 0 20px;
+	line-height: 40px;
+}
+/*以下关于我们界面代码*/
+.us-txt {
+	width:100%;
+	margin: 0px;
+	padding: 0px;
+}
+.us-txt2 {
+	width: 1200px;
+	font-size: 18px;
+	color: #333;
+	line-height: 80px;
+	margin: 100px auto;
+}

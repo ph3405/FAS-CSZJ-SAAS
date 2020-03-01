@@ -1,0 +1,1 @@
+Alter table dbo.TKS_FAS_AccountInfo add LandTax decimal(18, 4)

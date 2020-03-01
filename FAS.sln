@@ -1,0 +1,88 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKS.FAS.BLL", "TKS.FAS.BLL\TKS.FAS.BLL.csproj", "{ECBF54F5-975C-4E52-80B0-83DB4BC4C594}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKS.FAS.DAL", "TKS.FAS.DLL\TKS.FAS.DAL.csproj", "{092B1F77-87D0-4248-9CE3-C628FC828C82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKS.FAS.Entity", "TKS.FAS.Entity\TKS.FAS.Entity.csproj", "{6AB6D7FA-9F93-4E28-8472-A8E5D89C51F2}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web", "Web\", "{2B308940-552B-4DB3-B0A4-7D0CE1ED38A0}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{3e54d1f2-764d-4ebe-9072-143fc983692c}|TKS.FAS.Common.dll;{6AB6D7FA-9F93-4E28-8472-A8E5D89C51F2}|TKS.FAS.Entity.dll;{ecbf54f5-975c-4e52-80b0-83db4bc4c594}|TKS.FAS.BLL.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_59176"
+		Debug.AspNetCompiler.PhysicalPath = "Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59176\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_59176"
+		Release.AspNetCompiler.PhysicalPath = "Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59176\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "59176"
+		SlnRelativePath = "Web\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKS.FAS.Common", "TKS.FAS.Common\TKS.FAS.Common.csproj", "{3E54D1F2-764D-4EBE-9072-143FC983692C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKS.FAS.Test", "TKS.FAS.Test\TKS.FAS.Test.csproj", "{7D290FE8-0924-48A2-B454-A1115718795B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKS.FAS.API", "TKS.FAS.API\TKS.FAS.API.csproj", "{6055937E-9D0E-414E-9DBD-2BE13CEA7045}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lib", "lib\lib.csproj", "{5C1FF365-A23B-49D2-A358-037E38E6BE3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECBF54F5-975C-4E52-80B0-83DB4BC4C594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECBF54F5-975C-4E52-80B0-83DB4BC4C594}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECBF54F5-975C-4E52-80B0-83DB4BC4C594}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECBF54F5-975C-4E52-80B0-83DB4BC4C594}.Release|Any CPU.Build.0 = Release|Any CPU
+		{092B1F77-87D0-4248-9CE3-C628FC828C82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{092B1F77-87D0-4248-9CE3-C628FC828C82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{092B1F77-87D0-4248-9CE3-C628FC828C82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{092B1F77-87D0-4248-9CE3-C628FC828C82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AB6D7FA-9F93-4E28-8472-A8E5D89C51F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AB6D7FA-9F93-4E28-8472-A8E5D89C51F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AB6D7FA-9F93-4E28-8472-A8E5D89C51F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AB6D7FA-9F93-4E28-8472-A8E5D89C51F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B308940-552B-4DB3-B0A4-7D0CE1ED38A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B308940-552B-4DB3-B0A4-7D0CE1ED38A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B308940-552B-4DB3-B0A4-7D0CE1ED38A0}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B308940-552B-4DB3-B0A4-7D0CE1ED38A0}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{3E54D1F2-764D-4EBE-9072-143FC983692C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E54D1F2-764D-4EBE-9072-143FC983692C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E54D1F2-764D-4EBE-9072-143FC983692C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E54D1F2-764D-4EBE-9072-143FC983692C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D290FE8-0924-48A2-B454-A1115718795B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D290FE8-0924-48A2-B454-A1115718795B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D290FE8-0924-48A2-B454-A1115718795B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D290FE8-0924-48A2-B454-A1115718795B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6055937E-9D0E-414E-9DBD-2BE13CEA7045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6055937E-9D0E-414E-9DBD-2BE13CEA7045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6055937E-9D0E-414E-9DBD-2BE13CEA7045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6055937E-9D0E-414E-9DBD-2BE13CEA7045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C1FF365-A23B-49D2-A358-037E38E6BE3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C1FF365-A23B-49D2-A358-037E38E6BE3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C1FF365-A23B-49D2-A358-037E38E6BE3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C1FF365-A23B-49D2-A358-037E38E6BE3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9967BC1-2CB2-4176-BAA3-55EC1783F128}
+	EndGlobalSection
+EndGlobal

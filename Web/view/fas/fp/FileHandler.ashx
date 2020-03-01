@@ -1,0 +1,180 @@
+﻿<%@ WebHandler Language="C#" Class="FileHandler" %>
+
+using System;
+using System.Collections;
+using System.Data;
+using System.Web;
+using System.Web.Services;
+using System.Web.Services.Protocols;
+using System.Xml.Linq;
+using System.Web.SessionState;
+using System.Drawing;
+using System.IO;
+using TKS.FAS.BLL.FAS;
+using NPOI.HSSF.UserModel;
+using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
+
+
+public class FileHandler : IHttpHandler, IRequiresSessionState
+{
+
+    public void ProcessRequest(HttpContext context)
+    {
+
+        try
+        {
+
+            HttpPostedFile file = context.Request.Files["Filedata"]; //上传文件
+
+
+            if (file != null)
+            {
+                var user = SessionHelper.GetUserInfo();
+
+                var dt = ExcelToDataTable("发票", true, file);
+
+                BALBLL bll = new TKS.FAS.BLL.FAS.BALBLL();
+                bll.FPImport(dt, user.Token);
+
+                //下面这句代码缺少的话，上传成功后上传队列的显示不会自动消失
+                context.Response.Write("1");
+
+
+
+            }
+        }
+        catch (Exception ex)
+        {
+
+            context.Response.Write(ex.Message);
+
+        }
+        finally
+        {
+            GC.Collect();
+        }
+    }
+    public bool IsReusable
+    {
+        get
+        {
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// 将excel中的数据导入到DataTable中
+    /// </summary>
+    /// <param name="sheetName">excel工作薄sheet的名称</param>
+    /// <param name="isFirstRowColumn">第一行是否是DataTable的列名</param>
+    /// <returns>返回的DataTable</returns>
+    public DataTable ExcelToDataTable(string sheetName, bool isFirstRowColumn, HttpPostedFile fs)
+    {
+        ISheet sheet = null;
+        DataTable dt = new DataTable();
+        dt.Columns.Add("InvoiceDate", typeof(string));//发票日期
+        dt.Columns.Add("InvoiceNo", typeof(string));//发票号码
+        dt.Columns.Add("Memo", typeof(string));//备注
+
+        dt.Columns.Add("Type", typeof(string));//业务类型
+        dt.Columns.Add("IsVAT", typeof(string));//是否增值税专用发票
+        dt.Columns.Add("RPStatus", typeof(string));//收付状态
+        dt.Columns.Add("PayMode", typeof(string));//支付方式
+        dt.Columns.Add("Money", typeof(string));//含税金额
+        dt.Columns.Add("TaxMoney", typeof(string));//税金金额
+
+        dt.Columns.Add("SF_Money", typeof(string));//发票金额
+        dt.Columns.Add("SFType", typeof(string));//收付类型
+        dt.Columns.Add("BasicDataName", typeof(string));//供应商/客户
+        dt.Columns.Add("SFDate", typeof(string));//收付日期       
+        dt.Columns.Add("SFMoney", typeof(string));//收付金额
+        dt.Columns.Add("SFStatus", typeof(string));//细项收付状态
+        dt.Columns.Add("SFRemark", typeof(string));//细项备注
+
+        int startRow = 0;
+        try
+        {
+            IWorkbook workbook = null;
+            if (fs.FileName.IndexOf(".xlsx") > 0) // 2007版本
+                workbook = new XSSFWorkbook(fs.InputStream);
+            else if (fs.FileName.IndexOf(".xls") > 0) // 2003版本
+                workbook = new HSSFWorkbook(fs.InputStream);
+
+            if (sheetName != null)
+            {
+                sheet = workbook.GetSheet(sheetName);
+                if (sheet == null) //如果没有找到指定的sheetName对应的sheet，则尝试获取第一个sheet
+                {
+                    sheet = workbook.GetSheetAt(0);
+                }
+            }
+            else
+            {
+                sheet = workbook.GetSheetAt(0);
+            }
+            if (sheet != null)
+            {
+                IRow firstRow = sheet.GetRow(1);//此处表头有两行，因此从第二行开始作为表头列明
+                int cellCount = firstRow.LastCellNum; //一行最后一个cell的编号 即总的列数
+
+                if (isFirstRowColumn)
+                {
+                    for (int i = firstRow.FirstCellNum; i < cellCount; ++i)
+                    {
+
+                        ICell cell = firstRow.GetCell(i);
+                        if (cell != null)
+                        {
+                            string cellValue = cell.StringCellValue;
+                            if (cellValue != null)
+                            {
+                                //DataColumn column = new DataColumn(cellValue);
+                                //data.Columns.Add(column);
+
+                            }
+                        }
+                    }
+                    startRow = sheet.FirstRowNum + 1+1;//此处表头有两行，数据源从第三行开始
+                }
+                else
+                {
+                    startRow = sheet.FirstRowNum;
+                }
+
+                //最后一列的标号
+                int rowCount = sheet.LastRowNum;
+                for (int i = startRow; i <= rowCount; ++i)
+                {
+                    IRow row = sheet.GetRow(i);
+                    if (row == null) continue; //没有数据的行默认是null　　　　　　　
+                    if (string.IsNullOrEmpty(row.Cells[0].ToString()))
+                    {
+                        continue;
+                    }
+                    DataRow dataRow = dt.NewRow();
+                    for (int j = row.FirstCellNum; j < cellCount; ++j)
+                    {
+                        dataRow[j] = "";
+                        if (row.GetCell(j) != null) //同理，没有数据的单元格都默认是null
+                        {
+                            dataRow[j] = row.GetCell(j).ToString();
+                        }
+                    }
+                    dt.Rows.Add(dataRow);
+                }
+            }
+
+            return dt;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Exception: " + ex.Message);
+            return null;
+        }
+    }
+
+
+
+
+}

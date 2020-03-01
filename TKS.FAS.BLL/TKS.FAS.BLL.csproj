@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ECBF54F5-975C-4E52-80B0-83DB4BC4C594}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TKS.FAS.BLL</RootNamespace>
+    <AssemblyName>TKS.FAS.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="aliyun-net-sdk-core">
+      <HintPath>..\lib\aliyun-net-sdk-core.dll</HintPath>
+    </Reference>
+    <Reference Include="aliyun-net-sdk-sms">
+      <HintPath>..\lib\aliyun-net-sdk-sms.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Dapper.1.50.2\lib\net40\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DapperExtensions, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DapperExtensions.1.5.0\lib\net40\DapperExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\lib\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\lib\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\lib\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FAS\AccountBook\AccountBookBLL.cs" />
+    <Compile Include="FAS\AccountBook\Comparer.cs" />
+    <Compile Include="FAS\Balance\BalanceBLL.cs" />
+    <Compile Include="FAS\Doc\DocBLL.cs" />
+    <Compile Include="FAS\Doc\FJBLL.cs" />
+    <Compile Include="FAS\FixedAssets\FixedAssetsBLL.cs" />
+    <Compile Include="FAS\BasicData\BasicDataBLL.cs" />
+    <Compile Include="FAS\FP\FPFJBLL.cs" />
+    <Compile Include="FAS\FP\InvoiceBLL.cs" />
+    <Compile Include="FAS\IC\ICRegisterBLL.cs" />
+    <Compile Include="FAS\KSPZ\KSPZBLL.cs" />
+    <Compile Include="FAS\MyAccount\MyAccountBLL.cs" />
+    <Compile Include="FAS\News\NewsBLL.cs" />
+    <Compile Include="FAS\OCR\OcrBll.cs" />
+    <Compile Include="FAS\Period\PeriodBLL.cs" />
+    <Compile Include="FAS\QM\QMBLL.cs" />
+    <Compile Include="FAS\Report\ReportBLL.cs" />
+    <Compile Include="FAS\Report\ReportBLL2.cs" />
+    <Compile Include="FAS\Report\ReportBLL3.cs" />
+    <Compile Include="FAS\Set\AccountSetBLL.cs" />
+    <Compile Include="FAS\Set\AccountSetOutSourceBLL.cs" />
+    <Compile Include="FAS\Set\BALBLL.cs" />
+    <Compile Include="FAS\Set\CalHelperBLL.cs" />
+    <Compile Include="FAS\Set\CurrencyBLL.cs" />
+    <Compile Include="FAS\Set\CustomDataBLL.cs" />
+    <Compile Include="FAS\Set\SupplierBLL.cs" />
+    <Compile Include="FAS\Set\TPLBLL.cs" />
+    <Compile Include="FAS\Set\PZZBLL.cs" />
+    <Compile Include="FAS\Set\SubjectBLL.cs" />
+    <Compile Include="FAS\Set\PermissionBLL.cs" />
+    <Compile Include="FAS\TPLManage\DataBLL.cs" />
+    <Compile Include="FAS\TPLManage\FormulaBLL.cs" />
+    <Compile Include="FAS\TPLManage\FPtplBLL.cs" />
+    <Compile Include="FAS\TPLManage\ReportTplBLL.cs" />
+    <Compile Include="FAS\TPLManage\TPLMBLL.cs" />
+    <Compile Include="SSO\FunctionBLL.cs" />
+    <Compile Include="SSO\NodeAccountBLL.cs" />
+    <Compile Include="SSO\NodeBLL.cs" />
+    <Compile Include="SSO\RoleBLL.cs" />
+    <Compile Include="SSO\PrivilegeBLL.cs" />
+    <Compile Include="SSO\UserBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TKS.FAS.Common\TKS.FAS.Common.csproj">
+      <Project>{3e54d1f2-764d-4ebe-9072-143fc983692c}</Project>
+      <Name>TKS.FAS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TKS.FAS.Entity\TKS.FAS.Entity.csproj">
+      <Project>{6ab6d7fa-9f93-4e28-8472-a8e5d89c51f2}</Project>
+      <Name>TKS.FAS.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

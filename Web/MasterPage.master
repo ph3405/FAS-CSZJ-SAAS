@@ -1,0 +1,122 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="<%=ResolveUrl( "css/index.css") %>" rel="stylesheet" />
+    <script type="text/javascript" src="layui/layui.js"></script>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="header">
+        <div class="container clearfix">
+            <div class="logo">
+                <a href="#">
+                    <img src="<%=ResolveUrl( "images/logo.png") %>"></a>
+            </div>
+            <div class="the_menu">
+                <img src="images/menu_icon.png" />
+            </div>
+            <div id="divMenu">
+                <div class="header-nav"><a href="#">首页</a></div>
+                <div class="header-nav"><a href="<%=ResolveUrl( "main.aspx") %>">财务系统</a></div>
+                <div class="header-nav"><a href="#">财税讲堂</a></div>
+                <div class="header-nav"><a href="#">咨询中心</a></div>
+                <div class="header-nav"><a target="_blank" href="#">关于我们</a></div>
+
+                <div runat="server" id="login">
+                    <a href="<%=ResolveUrl( "register1.aspx") %>" class="header-login" target="_blank">免费注册</a>
+                    <a href="<%=ResolveUrl( "login.aspx") %>" class="header-login" target="_blank">登录</a>
+                </div>
+
+                <div runat="server" id="app">
+                    <a href="<%=ResolveUrl( "main.aspx") %>" class="header-login" target="_blank">我的应用</a>
+                    <a href="<%=ResolveUrl( "logout.aspx") %>" class="header-login" target="_blank">注销</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+
+
+    <div class="the_last">
+        <div class="foot">
+            <div class="foot_list1">
+                <div class="foot_title">关于我们</div>
+                <div class="foot_txt">
+                    <a href="#">公司简介</a>
+                    <a href="#">奖项</a>
+                    <a href="#">投资者</a>
+                    <a href="#">诚征英才</a>
+                </div>
+            </div>
+            <div class="foot_list2">
+                <div class="foot_title">新闻活动</div>
+                <div class="foot_txt">
+                    <a href="#">新闻稿</a>
+                    <a href="#">新闻报道</a>
+                    <a href="#">活动信息</a>
+                </div>
+            </div>
+            <div class="foot_list3">
+                <div class="foot_title">解决方案</div>
+                <div class="foot_txt">
+                    <a href="#">技术支持</a>
+                    <a href="#">团队</a>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+
+        <div class="bottom">
+            <div class="tips"><a href="#">湘ICP备15014046号-1 </a></div>
+        </div>
+
+
+    </div>
+
+    <script type="text/javascript">
+        layui.config({
+            base: "/layui/lay/modules/"
+        }).use(['bodyTab', 'form', 'element', 'layer', 'jquery', 'jqExt'], function () {
+            var form = layui.form(),
+                layer = layui.layer,
+                element = layui.element();
+            $ = layui.jquery;
+            $(document).ready(function () {
+                //$('#app').hide();
+                //$('.header-nav').hide();
+
+                showFlag = 0;
+            });
+            var showFlag = 0;
+            $('.the_menu').click(function () {
+                if (showFlag == 0) {
+                    //$('.header-nav').show();
+                    //$('#app').show();
+                    $('#divMenu').show();
+                    showFlag = 1;
+                }
+                else {
+                    //$('.header-nav').hide();
+                    //$('#app').hide();
+                    $('#divMenu').hide();
+                    showFlag = 0;
+                }
+            })
+
+        })
+
+    </script>
+</body>
+</html>

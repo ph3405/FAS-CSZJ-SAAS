@@ -1,0 +1,13 @@
+D:\wwwroot\FAS-CSZJ-SAAS\TKS.FAS.DLL\bin\Release\TKS.FAS.DAL.dll
+D:\wwwroot\FAS-CSZJ-SAAS\TKS.FAS.DLL\bin\Release\TKS.FAS.DAL.pdb
+D:\wwwroot\FAS-CSZJ-SAAS\TKS.FAS.DLL\bin\Release\TKS.FAS.Common.dll
+D:\wwwroot\FAS-CSZJ-SAAS\TKS.FAS.DLL\bin\Release\TKS.FAS.Entity.dll
+D:\wwwroot\FAS-CSZJ-SAAS\TKS.FAS.DLL\bin\Release\Dapper.dll
+D:\wwwroot\FAS-CSZJ-SAAS\TKS.FAS.DLL\bin\Release\TKS.FAS.Common.pdb
+D:\wwwroot\FAS-CSZJ-SAAS\TKS.FAS.DLL\bin\Release\TKS.FAS.Entity.pdb
+D:\wwwroot\FAS-CSZJ-SAAS\TKS.FAS.DLL\bin\Release\Dapper.xml
+D:\wwwroot\FAS-CSZJ-SAAS\TKS.FAS.DLL\obj\Release\TKS.FAS.DAL.csprojAssemblyReference.cache
+D:\wwwroot\FAS-CSZJ-SAAS\TKS.FAS.DLL\obj\Release\TKS.FAS.DAL.csproj.CoreCompileInputs.cache
+D:\wwwroot\FAS-CSZJ-SAAS\TKS.FAS.DLL\obj\Release\TKS.FAS.DAL.csproj.CopyComplete
+D:\wwwroot\FAS-CSZJ-SAAS\TKS.FAS.DLL\obj\Release\TKS.FAS.DAL.dll
+D:\wwwroot\FAS-CSZJ-SAAS\TKS.FAS.DLL\obj\Release\TKS.FAS.DAL.pdb
